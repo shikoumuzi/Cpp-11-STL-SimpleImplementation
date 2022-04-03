@@ -7,15 +7,15 @@
 #include "assert.h"
 #include"EuiOpthon.h"
 #include<iomanip>
-
+#define E_PRIVATE(classname) classname##Private
 
 class EString
 {
 private:
 	E_PRIVATE(EString)* d;
-	static constexpr auto npos{ static_cast<size_t>(-1) };//¶¨ÒåÒ»¸ö²»´æÔÚµÄ×î´óÖµ
+	static constexpr auto npos{ static_cast<size_t>(-1) };//ï¿½ï¿½ï¿½ï¿½Ò»ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Úµï¿½ï¿½ï¿½ï¿½Öµ
 public:
-	//µü´úÆ÷
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 	friend class Iterator;
 	class Iterator
 	{
@@ -58,7 +58,7 @@ public:
 	EString(EString&str, size_t begin, size_t end);
 	~EString();
 public:
-	//¸ñÊ½»¯Êä³ö
+	//ï¿½ï¿½Ê½ï¿½ï¿½ï¿½ï¿½ï¿½
 	EString	arg(const EString& a/* = QLatin1Char(' ') */) const;
 	EString	arg(long long a/*, int fieldWidth = 0, */,int base = 10/* char fillChar = ' '/* = QLatin1Char(' ') */) const;
 	EString	arg(unsigned long long a,/* int fieldWidth = 0, */int base = 10/*, char fillChar = ' ' /* = QLatin1Char(' ') */) const;
@@ -73,7 +73,7 @@ public:
 //	EString	arg(char a, int fieldWidth = 0, char fillChar = ' '/* = QLatin1Char(' ') */) const; 
 	template<typename...Args>
 	EString	arg(Args&&... args) const;
-	//Ôö²éÉ¾¸Ä
+	//ï¿½ï¿½ï¿½ï¿½É¾ï¿½ï¿½
 	EString::Iterator begin();
 	EString::Iterator end();
 	EString::Iterator rbegin();
@@ -142,7 +142,7 @@ public:
 	void push_front(const EString& other);
 	void push_front(char* const other);
 
-	//ÊôÐÔ
+	//ï¿½ï¿½ï¿½ï¿½
 	int	compare(const EString& other) const;
 	int	compare(const char* other) const;
 	int	compare(const wchar_t* other) const;
